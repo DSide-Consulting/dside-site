@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DSide Consulting — Software that takes work off your desk</title>
+<meta name="description" content="DSide Consulting builds software for physical therapy practices. Custom builds for the problems that are yours alone. STAN for the ones every practice has.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1e293b;
+  --ink-soft:#475569;
+  --muted:#64748b;
+  --navy:#1a3a5c;
+  --navy-deep:#0f2340;
+  --teal:#0d9488;
+  --teal-dark:#0b7c72;
+  --teal-bright:#5eead4;
+  --teal-tint:#ccfbf1;
+  --line:#e2e8f0;
+  --paper:#ffffff;
+  --paper-alt:#f8fafc;
+  --paper-blue:#f0f6ff;
+  --radius:14px;
+  --maxw:1140px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{
+  font-family:Inter,system-ui,-apple-system,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+section{padding:100px 0}
+h1,h2,h3,h4{line-height:1.15;letter-spacing:-.022em}
+h2{font-size:clamp(30px,4vw,44px);font-weight:800}
+h3{font-size:20px;font-weight:700;letter-spacing:-.015em}
+p{color:var(--ink-soft)}
+a{color:inherit}
+em{font-style:normal;color:var(--teal)}
+
+.eyebrow{
+  font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:18px;display:block;
+}
+.eyebrow.on-dark{color:var(--teal-bright)}
+.lede{font-size:19px;max-width:64ch}
+
+/* ---------- nav ---------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(255,255,255,.88);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:24px}
+.brand{font-weight:900;font-size:19px;letter-spacing:-.03em;text-decoration:none;white-space:nowrap}
+.brand span{color:var(--teal)}
+.navlinks{display:flex;gap:30px;list-style:none}
+.navlinks a{
+  text-decoration:none;font-size:14.5px;font-weight:500;color:var(--ink-soft);
+  transition:color .15s;
+}
+.navlinks a:hover{color:var(--teal)}
+.btn{
+  display:inline-block;text-decoration:none;font-weight:600;font-size:15px;
+  padding:13px 24px;border-radius:10px;transition:transform .12s,background .15s,box-shadow .15s;
+  white-space:nowrap;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-teal{background:var(--teal);color:#fff;box-shadow:0 2px 14px rgba(13,148,136,.28)}
+.btn-teal:hover{background:var(--teal-dark)}
+.btn-ghost{border:1px solid rgba(255,255,255,.28);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.09)}
+.btn-outline{border:1px solid var(--line);color:var(--ink);background:#fff}
+.btn-outline:hover{border-color:var(--teal);color:var(--teal)}
+.btn-sm{padding:10px 18px;font-size:14px}
+
+/* ---------- hero ---------- */
+.hero{
+  background:
+    radial-gradient(900px 500px at 78% 8%, rgba(13,148,136,.32), transparent 62%),
+    radial-gradient(700px 420px at 8% 92%, rgba(94,234,212,.12), transparent 60%),
+    linear-gradient(160deg,var(--navy-deep),var(--navy));
+  color:#fff;padding:170px 0 110px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(700px 460px at 72% 22%,#000,transparent 78%);
+}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{
+  font-size:clamp(38px,6.2vw,66px);font-weight:900;max-width:16ch;
+  letter-spacing:-.035em;margin-bottom:26px;
+}
+.hero h1 em{color:var(--teal-bright)}
+.nb{white-space:nowrap}
+.hero p{color:rgba(255,255,255,.76);font-size:19.5px;max-width:60ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px}
+.hero-note{
+  margin-top:44px;padding-top:26px;border-top:1px solid rgba(255,255,255,.13);
+  font-size:14.5px;color:rgba(255,255,255,.6);max-width:62ch;
+}
+
+/* ---------- stat strip ---------- */
+.stats{background:var(--navy-deep);color:#fff;padding:0}
+.stats .wrap{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:rgba(255,255,255,.1);border-radius:0;
+}
+.stat{background:var(--navy-deep);padding:34px 24px}
+.stat b{display:block;font-size:40px;font-weight:800;color:var(--teal-bright);letter-spacing:-.03em}
+.stat span{display:block;font-size:20px;color:rgba(255,255,255,.72);margin-top:8px;line-height:1.4}
+
+/* ---------- generic blocks ---------- */
+.alt{background:var(--paper-alt)}
+.blue{background:var(--paper-blue)}
+.head{max-width:70ch;margin-bottom:56px}
+.head h2{margin-bottom:18px}
+
+.grid{display:grid;gap:22px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px;transition:border-color .18s,box-shadow .18s,transform .18s;
+}
+.card:hover{border-color:#c8d6e5;box-shadow:0 10px 32px rgba(15,35,64,.07);transform:translateY(-2px)}
+.card h3{margin-bottom:10px}
+.card p{font-size:15.5px}
+.tag{
+  display:inline-block;font-size:11px;font-weight:700;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--teal);background:var(--teal-tint);
+  padding:5px 11px;border-radius:6px;margin-bottom:16px;
+}
+
+.quote{
+  margin-top:60px;padding:40px 44px;border-left:4px solid var(--teal);
+  background:#fff;border-radius:0 var(--radius) var(--radius) 0;
+  font-size:23px;font-weight:700;letter-spacing:-.02em;line-height:1.4;color:var(--ink);
+}
+.quote small{display:block;font-size:15px;font-weight:500;color:var(--muted);margin-top:14px;letter-spacing:0}
+
+/* ---------- how we work ---------- */
+.steps{counter-reset:s;display:grid;gap:0;margin-top:14px}
+.step{
+  counter-increment:s;display:grid;grid-template-columns:78px 1fr;gap:26px;
+  padding:32px 0;border-top:1px solid var(--line);align-items:start;
+}
+.step:last-child{border-bottom:1px solid var(--line)}
+.step::before{
+  content:"0" counter(s);font-size:15px;font-weight:800;color:var(--teal);
+  letter-spacing:.05em;padding-top:4px;
+}
+.step h3{margin-bottom:8px}
+.step p{font-size:16px;max-width:70ch}
+
+/* ---------- STAN ---------- */
+.stan{
+  background:
+    radial-gradient(760px 440px at 88% 10%, rgba(13,148,136,.34), transparent 62%),
+    linear-gradient(150deg,var(--navy-deep),#12304f);
+  color:#fff;
+}
+.stan h2{max-width:20ch}
+.stan .lede{color:rgba(255,255,255,.75);font-size:18.5px}
+.stan .card{
+  background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.13);
+}
+.stan .card:hover{border-color:rgba(94,234,212,.42);box-shadow:none}
+.stan .card h3{color:#fff;font-size:17.5px}
+.stan .card p{color:rgba(255,255,255,.66);font-size:15px}
+.stan .card .num{
+  font-size:12px;font-weight:800;color:var(--teal-bright);letter-spacing:.12em;
+  display:block;margin-bottom:14px;
+}
+.stan-split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.stan-line{
+  margin-top:52px;padding:28px 32px;border:1px solid rgba(94,234,212,.28);
+  border-radius:var(--radius);background:rgba(94,234,212,.05);
+  display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap;
+}
+.stan-line p{color:rgba(255,255,255,.82);font-size:17px;font-weight:600;max-width:52ch}
+
+/* ---------- about ---------- */
+.about-split{display:grid;grid-template-columns:1.35fr 1fr;gap:64px;align-items:start}
+.about-split p+p{margin-top:18px}
+.creds{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.cred{background:#fff;padding:24px 26px}
+.cred b{display:block;font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-.03em}
+.cred span{display:block;font-size:14px;color:var(--muted);margin-top:4px;line-height:1.45}
+.pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:28px}
+.pill{
+  font-size:13px;font-weight:600;color:var(--ink-soft);background:#fff;
+  border:1px solid var(--line);padding:8px 14px;border-radius:100px;
+}
+
+/* ---------- contact ---------- */
+.contact{background:var(--navy-deep);color:#fff;text-align:center}
+.contact h2{max-width:22ch;margin:0 auto 18px}
+.contact p{color:rgba(255,255,255,.72);max-width:56ch;margin:0 auto}
+.contact-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:38px}
+.contact small{display:block;margin-top:30px;color:rgba(255,255,255,.45);font-size:14px}
+
+footer{background:#0b1c33;color:rgba(255,255,255,.55);padding:36px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer a{color:rgba(255,255,255,.75);text-decoration:none}
+footer a:hover{color:var(--teal-bright)}
+
+/* ---------- responsive ---------- */
+@media(max-width:980px){
+  .g4{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(2,1fr)}
+  .stats .wrap{grid-template-columns:repeat(2,1fr)}
+  .stan-split,.about-split{grid-template-columns:1fr;gap:40px}
+  .navlinks{display:none}
+}
+@media(max-width:640px){
+  section{padding:72px 0}
+  .hero{padding:130px 0 80px}
+  .g2,.g3,.g4{grid-template-columns:1fr}
+  .stats .wrap{grid-template-columns:1fr}
+  .quote{padding:28px 26px;font-size:20px}
+  .step{grid-template-columns:1fr;gap:10px}
+  .step::before{padding-top:0}
+  .wrap{padding:0 20px}
+}
+@media(max-width:420px){
+  /* keeps "Physical Therapy." on one unbroken line on small phones */
+  .hero h1{font-size:32px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="brand">D<span>Side</span> Consulting</a>
+    <ul class="navlinks">
+      <li><a href="#problem">The Problem</a></li>
+      <li><a href="#work">What We Build</a></li>
+      <li><a href="#stan">STAN</a></li>
+      <li><a href="#process">How It Works</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a class="btn btn-teal btn-sm" href="https://calendar.app.google/7gdkohRqV7wFtHuk8" target="_blank" rel="noopener">Book a call</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow on-dark">DSide Consulting, LLC</span>
+    <h1>Most of your week <em>isn't</em> <span class="nb">Physical Therapy.</span></h1>
+    <p>It's the schedule, staffing, the auth queue, and the spreadsheet you rebuild every month. We build software that takes that work off your desk — and we start with your operation, not a demo.</p>
+    <div class="hero-cta">
+      <a class="btn btn-teal" href="https://calendar.app.google/7gdkohRqV7wFtHuk8" target="_blank" rel="noopener">Book a 30-minute call</a>
+      <a class="btn btn-ghost" href="#stan">See what STAN does →</a>
+    </div>
+    <p class="hero-note">Built by an experienced PT practice owner/operator and a senior AI engineering team. We ship working software in weeks, and you own what we build.</p>
+  </div>
+</header>
+
+<!-- ================= STATS ================= -->
+<section class="stats" style="padding:0">
+  <div class="wrap">
+    <div class="stat"><b>35%</b><span>of clinician time lost to documentation</span></div>
+    <div class="stat"><b>20%</b><span>average no-show &amp; cancellation rate</span></div>
+    <div class="stat"><b>$20–50K</b><span>cost to replace a single PT</span></div>
+    <div class="stat"><b>17%</b><span>PT vacancy rate (APTA 2024)</span></div>
+  </div>
+</section>
+
+<!-- ================= PROBLEM ================= -->
+<section id="problem" class="alt">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">The Problem</span>
+      <h2>Thin margins, no bench, and every fire routes to the owner.</h2>
+      <p class="lede">You're running a business that can't absorb a bad week. And the parts that break aren't clinical.</p>
+    </div>
+
+    <div class="grid g2">
+      <div class="card">
+        <span class="tag">Operations</span>
+        <h3>The system is you</h3>
+        <p>Scheduling gaps, front-desk turnover, auth queues, the onboarding checklist that lives in your head. None of it is written down anywhere, so all of it comes back to you — usually at 7am.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Hiring &amp; Talent</span>
+        <h3>You're always one clinician down</h3>
+        <p>Sourcing, interviewing, credentialing, ramping. Then the productivity dip while they learn your workflow. Do that twice a year and it's a part-time job you never applied for.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Finances</span>
+        <h3>You know the number. Not why.</h3>
+        <p>Reimbursement drops, visits get undercoded, revenue leaks between the schedule and the claim. Your EMR reports tell you what happened. They don't tell you where the money went.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Tooling</span>
+        <h3>You've bought software before</h3>
+        <p>It got abandoned in ninety days. Not because the product was bad — because it was designed for a different practice than yours, and nobody stayed long enough to fit it to how you actually run.</p>
+      </div>
+    </div>
+
+    <div class="quote">
+      The tools in this market aren't bad. They're just built for someone else's practice.
+      <small>That gap is the whole reason DSide Consulting exists.</small>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHAT WE BUILD ================= -->
+<section id="work">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">What We Build</span>
+      <h2>An operator's read on the problem. An engineering team that ships.</h2>
+      <p class="lede">I'm a licensed, practicing PT. I've built the schedule, done the hiring, and signed the vendor contracts. DSide Consulting pairs that with a senior AI engineering team — so the solutions we hand you were designed by a veteran PT operator who has lived the problems, and built by experts who ship custom software for a living.</p>
+    </div>
+
+    <div class="grid g3">
+      <div class="card">
+        <h3>Operations automation</h3>
+        <p>Scheduling logic, cancellation recovery, intake, auth tracking, and the handoffs between them. The manual work that eats your front desk, handled by software that knows your rules.</p>
+      </div>
+      <div class="card">
+        <h3>Hiring &amp; talent systems</h3>
+        <p>Pipeline tracking, structured onboarding, credentialing timelines, and productivity ramp visibility. So the next hire doesn't reset your operation for a quarter.</p>
+      </div>
+      <div class="card">
+        <h3>Financial visibility</h3>
+        <p>Revenue leakage, coding patterns, payer mix, capacity utilization. Pulled from the systems you already run and put in one place you'll actually open.</p>
+      </div>
+      <div class="card">
+        <h3>Documentation relief</h3>
+        <p>AI where it belongs — reducing the note burden without putting a clinical decision in a black box. Clinicians stay accountable for the chart.</p>
+      </div>
+      <div class="card">
+        <h3>The glue between your tools</h3>
+        <p>Your EMR, your scheduler, your billing partner, your comms stack. Most practices don't need a new platform. They need the ones they have to talk to each other.</p>
+      </div>
+      <div class="card">
+        <h3>Whatever is specific to you</h3>
+        <p>Every practice has one weird process that no vendor will ever build for. That's the work generic software can't reach, and it's usually where the margin is hiding.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STAN ================= -->
+<section id="stan" class="stan">
+  <div class="wrap">
+    <div class="stan-split">
+      <div>
+        <span class="eyebrow on-dark">The Product</span>
+        <h2>STAN: most of the fix, none of the build.</h2>
+      </div>
+      <div>
+        <p class="lede">Most practices don't need custom software. They need the same handful of problems solved and tuned to how they run. That's STAN — a plug-in that drops into the stack you already have and gets configured, not rebuilt.</p>
+        <p class="lede" style="margin-top:18px;">Weeks instead of quarters. Settings instead of a scope document.</p>
+      </div>
+    </div>
+
+    <div class="grid g3" style="margin-top:56px">
+      <div class="card"><span class="num">01</span><h3>Plugs into your stack</h3><p>Sits on top of your existing EMR and scheduler. No migration, no rip-and-replace, no retraining your staff on a new system.</p></div>
+      <div class="card"><span class="num">02</span><h3>Configured to your practice</h3><p>Your rules, your payer mix, your visit patterns, your thresholds. The engine is the same; the settings are yours.</p></div>
+      <div class="card"><span class="num">03</span><h3>Live in weeks</h3><p>Because there's nothing to build. Setup, configuration, a short pilot, then it's running.</p></div>
+      <div class="card"><span class="num">04</span><h3>One place to look</h3><p>Operations, staffing, and revenue signals in a single view instead of four dashboards you don't open.</p></div>
+      <div class="card"><span class="num">05</span><h3>Priced for an independent</h3><p>Built for practices that don't have a PE platform behind them or an ops director to run it.</p></div>
+      <div class="card"><span class="num">06</span><h3>Extends into custom</h3><p>Start with STAN. If you hit something it doesn't cover, that's where the custom work picks up — same team, no new vendor.</p></div>
+    </div>
+
+    <div class="stan-line">
+      <p>Not sure whether you need STAN or something built for you? That's what the first call is for.</p>
+      <a class="btn btn-teal" href="https://calendar.app.google/7gdkohRqV7wFtHuk8" target="_blank" rel="noopener">Request a walkthrough</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section id="process" class="alt">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">How It Works</span>
+      <h2>Small, working, and yours.</h2>
+      <p class="lede">No six-month discovery phase. No slide deck deliverable. We find where the time and money are going, ship something that fixes one piece of it, then keep going if it's working.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div>
+          <h3>Diagnostic</h3>
+          <p>Two weeks. We sit inside the operation — your schedule, your reports, your front desk, your last three hires. You get a written read on where the leakage is and what's worth fixing first, whether or not you work with us after.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <h3>Fit</h3>
+          <p>We tell you honestly whether STAN covers it. If it does, you get the cheaper, faster path. Custom only happens when the problem is actually specific to you.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <h3>Ship</h3>
+          <p>Working software in small increments, in production, with your team using it. You see progress in weeks. Consequential decisions stay with your clinicians and your managers, not the model.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <h3>Handoff</h3>
+          <p>Documented and owned by you. If you want us to stay on, that's a choice — not a dependency we engineered into the build.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-split">
+      <div>
+        <span class="eyebrow">About</span>
+        <h2 style="margin-bottom:24px">I owned and operated practices and I still treat patients. That's the <em>whole</em> advantage.</h2>
+        <p>I'm Daniel Seidler, PT — a licensed, practicing Physical Therapist in New York and the founder of DSide Consulting. I spend part of my week in the clinic and the rest of it working on the technology built for this market.</p>
+        <p>Most people selling software to PT practices have never run one. Most people who've run one can't build software. I've spent years on both sides — inside the clinic and inside the vendor world, doing product and business development for PT technology. That combination is rare, and it's the only reason this firm makes sense.</p>
+        <p>DSide Consulting exists because practice owners deserve someone who knows what 8am on a Monday looks like when your scheduler calls out and the auth queue has thirty items in it. Not a framework. Not a vendor pitch. Software that removes the things that are actually costing you.</p>
+        <p>The engineering side is a senior AI team I work with directly. Small, fast, and used to building for operations where the details matter.</p>
+        <div class="pills">
+          <span class="pill">Licensed PT, New York</span>
+          <span class="pill">PT Tech Product &amp; BD</span>
+          <span class="pill">Practice Operations</span>
+          <span class="pill">AI Implementation</span>
+          <span class="pill">Revenue Cycle</span>
+          <span class="pill">Workflow Design</span>
+        </div>
+      </div>
+      <div class="creds">
+        <div class="cred"><b>16 yrs</b><span>Owning and operating a high-volume NYC PT practice</span></div>
+        <div class="cred"><b>10 yrs</b><span>Enterprise PT and health technology experience</span></div>
+        <div class="cred"><b>PT, NY</b><span>Licensed and still treating patients</span></div>
+        <div class="cred"><b>$0</b><span>Vendor referral fees or hidden partnerships</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <span class="eyebrow on-dark">Work With Us</span>
+    <h2>Let's talk about it.</h2>
+    <p>Thirty minutes. Tell us about the issues that keep showing back up. You'll leave knowing whether it's a STAN configuration, a custom build, or something you shouldn't spend money on at all.</p>
+    <div class="contact-cta">
+      <a class="btn btn-teal" href="https://calendar.app.google/7gdkohRqV7wFtHuk8" target="_blank" rel="noopener">Schedule a call</a>
+    </div>
+    <small>DSide Consulting, LLC · New York, NY</small>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><strong style="color:#fff">DSide Consulting, LLC</strong> — software for physical therapy practices</div>
+    <div>© 2026 · <a href="mailto:info@dsideconsulting.com">info@dsideconsulting.com</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

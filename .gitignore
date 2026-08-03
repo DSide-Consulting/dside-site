@@ -1,0 +1,13 @@
+# Local archives of prior site versions — keep on disk, never deploy
+archive/
+_backup_pre-v2_2026-08-03/
+DSC_Tech.html
+dside-v2-prototype.html
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
+.idea/
