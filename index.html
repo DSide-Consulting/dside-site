@@ -117,8 +117,13 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
   background:rgba(255,255,255,.1);border-radius:0;
 }
 .stat{background:var(--navy-deep);padding:34px 24px}
-.stat b{display:block;font-size:40px;font-weight:800;color:var(--teal-bright);letter-spacing:-.03em}
+.stat b{display:block;font-size:40px;font-weight:800;color:var(--teal-bright);letter-spacing:-.03em;line-height:1.05}
+.stat b.long{font-size:26px;letter-spacing:-.02em;line-height:1.15}
 .stat span{display:block;font-size:20px;color:rgba(255,255,255,.72);margin-top:8px;line-height:1.4}
+.stat i{
+  display:block;font-style:normal;font-size:14px;font-weight:600;
+  color:var(--teal-bright);margin-top:10px;line-height:1.35;
+}
 
 /* ---------- generic blocks ---------- */
 .alt{background:var(--paper-alt)}
@@ -164,6 +169,55 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 }
 .step h3{margin-bottom:8px}
 .step p{font-size:16px;max-width:70ch}
+.step p.independence{
+  margin-top:14px;padding-left:16px;border-left:3px solid var(--teal);
+  font-size:15.5px;font-weight:600;color:var(--ink);
+}
+
+/* ---------- exit math ---------- */
+.exit{
+  background:
+    radial-gradient(760px 440px at 85% 12%, rgba(13,148,136,.30), transparent 62%),
+    linear-gradient(150deg,var(--navy-deep),#12304f);
+  color:#fff;
+}
+.exit h2{max-width:22ch;margin-bottom:20px}
+.exit .lede{color:rgba(255,255,255,.78);font-size:18.5px}
+.exit-body{color:rgba(255,255,255,.72);font-size:16.5px;max-width:66ch;margin-top:26px}
+.exit-body strong{color:#fff;font-weight:600}
+.math{
+  display:flex;align-items:stretch;gap:14px;flex-wrap:wrap;
+  margin:44px 0 8px;
+}
+.math-cell{
+  flex:1 1 190px;background:rgba(255,255,255,.055);
+  border:1px solid rgba(255,255,255,.13);border-radius:var(--radius);
+  padding:26px 24px;
+}
+.math-cell b{
+  display:block;font-size:38px;font-weight:800;letter-spacing:-.03em;
+  color:var(--teal-bright);line-height:1.05;
+}
+.math-cell.result b{color:#fff}
+.math-cell span{display:block;font-size:14.5px;color:rgba(255,255,255,.62);margin-top:10px;line-height:1.4}
+.math-op{
+  display:flex;align-items:center;font-size:24px;font-weight:800;
+  color:rgba(255,255,255,.35);
+}
+.exit-close{
+  margin-top:40px;padding:26px 30px;border:1px solid rgba(94,234,212,.28);
+  border-radius:var(--radius);background:rgba(94,234,212,.05);
+  font-size:17px;font-weight:600;color:rgba(255,255,255,.86);max-width:74ch;
+}
+.fineprint{
+  margin-top:26px;font-size:13.5px;line-height:1.6;
+  color:rgba(255,255,255,.45);max-width:74ch;
+}
+@media(max-width:640px){
+  .math{gap:10px}
+  .math-op{display:none}
+  .math-cell{flex:1 1 100%}
+}
 
 /* ---------- STAN ---------- */
 .stan{
@@ -249,6 +303,7 @@ footer a:hover{color:var(--teal-bright)}
     <ul class="navlinks">
       <li><a href="#problem">The Problem</a></li>
       <li><a href="#work">What We Build</a></li>
+      <li><a href="#exit">Exit Math</a></li>
       <li><a href="#process">How It Works</a></li>
       <li><a href="#about">About</a></li>
     </ul>
@@ -266,17 +321,17 @@ footer a:hover{color:var(--teal-bright)}
       <a class="btn btn-teal" href="https://calendar.app.google/7gdkohRqV7wFtHuk8" target="_blank" rel="noopener">Book a 30-minute call</a>
       <a class="btn btn-ghost" href="#work">See what we build →</a>
     </div>
-    <p class="hero-note">Built by an experienced PT practice owner/operator and a senior AI engineering team. We ship working software in weeks, and you own what we build.</p>
+    <p class="hero-note">Built by an experienced PT practice owner/operator and a senior AI engineering team. We ship working software in weeks, and you own what we build. We don't resell anyone's software and we don't take referral fees.</p>
   </div>
 </header>
 
 <!-- ================= STATS ================= -->
 <section class="stats" style="padding:0">
   <div class="wrap">
-    <div class="stat"><b>35%</b><span>of clinician time lost to documentation</span></div>
-    <div class="stat"><b>20%</b><span>average no-show &amp; cancellation rate</span></div>
-    <div class="stat"><b>$20–50K</b><span>cost to replace a single PT</span></div>
-    <div class="stat"><b>17%</b><span>PT vacancy rate (APTA 2024)</span></div>
+    <div class="stat"><b>13%</b><span>of PT and PTA positions sit open</span></div>
+    <div class="stat"><b class="long">Fewer than 1 in 4</b><span>patients finish their plan of care</span></div>
+    <div class="stat"><b>10–73%</b><span>no-show and cancellation rates across outpatient PT</span></div>
+    <div class="stat"><b>+1.75%</b><span>what Medicare added for PTs in 2026</span><i>Your wages didn't move 1.75%.</i></div>
   </div>
 </section>
 
@@ -303,7 +358,7 @@ footer a:hover{color:var(--teal-bright)}
       <div class="card">
         <span class="tag">Finances</span>
         <h3>You know the number. Not why.</h3>
-        <p>Reimbursement drops, visits get undercoded, revenue leaks between the schedule and the claim. Your EMR reports tell you what happened. They don't tell you where the money went.</p>
+        <p>Medicare gave you 1.75% this year. Your payroll didn't ask permission. Visits get undercoded, revenue leaks between the schedule and the claim, and your EMR reports tell you what happened without telling you where the money went.</p>
       </div>
       <div class="card">
         <span class="tag">Tooling</span>
@@ -357,6 +412,29 @@ footer a:hover{color:var(--teal-bright)}
   </div>
 </section>
 
+<!-- ================= EXIT MATH ================= -->
+<section id="exit" class="exit">
+  <div class="wrap">
+    <span class="eyebrow on-dark">The Exit Math</span>
+    <h2>If a sale is anywhere in your next few years, this is the highest-return work available to you.</h2>
+    <p class="lede">Multi-site PT groups have been transacting in the range of 5–10x EBITDA. So the operating margin you recover before a sale doesn't just show up in this year's distribution. It gets multiplied at close.</p>
+
+    <div class="math">
+      <div class="math-cell"><b>$200K</b><span>recovered annual EBITDA</span></div>
+      <div class="math-op">×</div>
+      <div class="math-cell"><b>6x</b><span>typical multi-site multiple</span></div>
+      <div class="math-op">=</div>
+      <div class="math-cell result"><b>$1.2M</b><span>added enterprise value at close</span></div>
+    </div>
+
+    <p class="exit-body">The auth queue, the undercoded visits, the cancellations nobody called back — all of that is EBITDA, and all of it is fixable before a diligence team starts asking. Most owners start about a year too late.</p>
+
+    <div class="exit-close">We're not brokers and we don't take a piece of your transaction. We find the margin before someone else's diligence team does.</div>
+
+    <p class="fineprint">Multiples vary by practice size, payer mix, and specialty concentration. We'll tell you what your operation looks like, not what your practice is worth. That's a valuation, and it's a different job.</p>
+  </div>
+</section>
+
 <!-- ================= PROCESS ================= -->
 <section id="process" class="alt">
   <div class="wrap">
@@ -377,6 +455,7 @@ footer a:hover{color:var(--teal-bright)}
         <div>
           <h3>Scope</h3>
           <p>We tell you honestly what's worth building and what isn't. Plenty of problems get solved by changing a process instead of buying software, and we'll say so.</p>
+          <p class="independence">We don't resell anyone's software and we take no referral fees. When we tell you a tool is worth buying, nobody is paying us to say it.</p>
         </div>
       </div>
       <div class="step">
@@ -402,8 +481,8 @@ footer a:hover{color:var(--teal-bright)}
       <div>
         <span class="eyebrow">About</span>
         <h2 style="margin-bottom:24px">I owned and operated practices and I still treat patients. That's the <em>whole</em> advantage.</h2>
-        <p>I'm Daniel Seidler, PT — a licensed, practicing Physical Therapist in New York and the founder of DSide Consulting. I spend part of my week in the clinic and the rest of it working on the technology built for this market.</p>
-        <p>Most people selling software to PT practices have never run one. Most people who've run one can't build software. I've spent years on both sides — inside the clinic and inside the vendor world, doing product and business development for PT technology. That combination is rare, and it's the only reason this firm makes sense.</p>
+        <p>I'm Daniel Seidler, PT — a licensed, practicing Physical Therapist in New York and the founder of DSide Consulting. I spend part of my week in the clinic and the rest of it building software for practices like yours.</p>
+        <p>Most people selling software to PT practices have never run one. Most people who've run one can't build software. I spent years inside the vendor world doing product and business development for PT technology. I know how these products get sold, what the demos leave out, and which problems the roadmap is never going to reach. Now I only build software for practices — I don't sell anyone else's.</p>
         <p>DSide Consulting exists because practice owners deserve someone who knows what 8am on a Monday looks like when your scheduler calls out and the auth queue has thirty items in it. Not a framework. Not a vendor pitch. Software that removes the things that are actually costing you.</p>
         <p>The engineering side is a senior AI team I work with directly. Small, fast, and used to building for operations where the details matter.</p>
         <div class="pills">
