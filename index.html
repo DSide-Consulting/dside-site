@@ -207,7 +207,10 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .exit-close{
   margin-top:40px;padding:26px 30px;border:1px solid rgba(94,234,212,.28);
   border-radius:var(--radius);background:rgba(94,234,212,.05);
-  font-size:17px;font-weight:600;color:rgba(255,255,255,.86);max-width:74ch;
+  display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap;
+}
+.exit-close p{
+  font-size:17px;font-weight:600;color:rgba(255,255,255,.86);max-width:52ch;margin:0;
 }
 .fineprint{
   margin-top:26px;font-size:13.5px;line-height:1.6;
@@ -330,7 +333,7 @@ footer a:hover{color:var(--teal-bright)}
   <div class="wrap">
     <div class="stat"><b>13%</b><span>of PT and PTA positions sit open</span></div>
     <div class="stat"><b class="long">Fewer than 1 in 4</b><span>patients finish their plan of care</span></div>
-    <div class="stat"><b>10–73%</b><span>no-show and cancellation rates across outpatient PT</span></div>
+    <div class="stat"><b>10–73%</b><span>no-show and cancellation rates across outpatient PT</span><i>That spread is an operations problem.</i></div>
     <div class="stat"><b>+1.75%</b><span>what Medicare added for PTs in 2026</span><i>Your wages didn't move 1.75%.</i></div>
   </div>
 </section>
@@ -429,7 +432,10 @@ footer a:hover{color:var(--teal-bright)}
 
     <p class="exit-body">The auth queue, the undercoded visits, the cancellations nobody called back — all of that is EBITDA, and all of it is fixable before a diligence team starts asking. Most owners start about a year too late.</p>
 
-    <div class="exit-close">We're not brokers and we don't take a piece of your transaction. We find the margin before someone else's diligence team does.</div>
+    <div class="exit-close">
+      <p>We're not brokers and we don't get paid by whoever buys you. We find the margin before someone else's diligence team does.</p>
+      <a class="btn btn-teal" href="https://calendar.app.google/7gdkohRqV7wFtHuk8" target="_blank" rel="noopener">Run the numbers with me</a>
+    </div>
 
     <p class="fineprint">Multiples vary by practice size, payer mix, and specialty concentration. We'll tell you what your operation looks like, not what your practice is worth. That's a valuation, and it's a different job.</p>
   </div>
