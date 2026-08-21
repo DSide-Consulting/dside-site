@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Field Notes — DSide Consulting</title>
+<meta name="description" content="Operator notes on physical therapy practice economics and systems. No dates, no newsletter, nothing gated.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1e293b; --ink-soft:#475569; --muted:#64748b;
+  --navy:#1a3a5c; --navy-deep:#0f2340;
+  --teal:#0d9488; --teal-dark:#0b7c72; --teal-bright:#5eead4; --teal-tint:#ccfbf1;
+  --line:#e2e8f0; --paper:#fff; --paper-alt:#f8fafc;
+  --radius:14px; --maxw:1140px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:Inter,system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--paper);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+h1,h2,h3{line-height:1.15;letter-spacing:-.022em}
+p{color:var(--ink-soft)}
+a{color:inherit}
+em{font-style:normal;color:var(--teal)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-bright);margin-bottom:18px;display:block}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:15px;padding:13px 24px;border-radius:10px;transition:transform .12s,background .15s;white-space:nowrap}
+.btn:hover{transform:translateY(-1px)}
+.btn-teal{background:var(--teal);color:#fff;box-shadow:0 2px 14px rgba(13,148,136,.28)}
+.btn-teal:hover{background:var(--teal-dark)}
+.btn-sm{padding:10px 18px;font-size:14px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:24px}
+.brand{font-weight:900;font-size:19px;letter-spacing:-.03em;text-decoration:none;white-space:nowrap}
+.brand span{color:var(--teal)}
+.navlinks{display:flex;gap:30px;list-style:none}
+.navlinks a{text-decoration:none;font-size:14.5px;font-weight:500;color:var(--ink-soft)}
+.navlinks a:hover{color:var(--teal)}
+
+.masthead{
+  background:radial-gradient(900px 500px at 78% 10%, rgba(13,148,136,.30), transparent 62%),
+             linear-gradient(160deg,var(--navy-deep),var(--navy));
+  color:#fff;padding:150px 0 80px;
+}
+.masthead h1{font-size:clamp(36px,5.4vw,54px);font-weight:900;letter-spacing:-.035em;max-width:18ch;margin-bottom:22px}
+.masthead p{color:rgba(255,255,255,.76);font-size:19px;max-width:62ch}
+
+.library{padding:80px 0 100px}
+.piece{
+  display:block;text-decoration:none;padding:36px 0;border-top:1px solid var(--line);
+  transition:border-color .18s;
+}
+.piece:last-of-type{border-bottom:1px solid var(--line)}
+.piece:hover{border-color:var(--teal)}
+.piece h2{font-size:clamp(22px,2.6vw,29px);font-weight:800;margin-bottom:12px;transition:color .15s}
+.piece:hover h2{color:var(--teal)}
+.piece p{font-size:16.5px;max-width:72ch}
+.piece .go{display:inline-block;margin-top:16px;font-size:14.5px;font-weight:600;color:var(--teal)}
+.kind{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--teal);background:var(--teal-tint);padding:5px 11px;border-radius:6px;margin-bottom:16px}
+
+.tail{margin-top:64px;padding:30px 34px;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper-alt);display:flex;justify-content:space-between;align-items:center;gap:26px;flex-wrap:wrap}
+.tail p{font-size:16.5px;font-weight:600;color:var(--ink);max-width:52ch}
+
+footer{background:#0b1c33;color:rgba(255,255,255,.55);padding:36px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer a{color:rgba(255,255,255,.75);text-decoration:none}
+footer a:hover{color:var(--teal-bright)}
+
+@media(max-width:820px){
+  .navlinks{display:none}
+  .masthead{padding:120px 0 60px}
+  .library{padding:56px 0 72px}
+  .wrap{padding:0 20px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="/" class="brand">D<span>Side</span> Consulting</a>
+    <ul class="navlinks">
+      <li><a href="/#work">What We Build</a></li>
+      <li><a href="/#exit">Exit Math</a></li>
+      <li><a href="/#process">How It Works</a></li>
+      <li><a href="/field-notes/">Field Notes</a></li>
+      <li><a href="/#about">About</a></li>
+    </ul>
+    <a class="btn btn-teal btn-sm" href="https://calendar.app.google/7gdkohRqV7wFtHuk8" target="_blank" rel="noopener">Book a call</a>
+  </div>
+</nav>
+
+<header class="masthead">
+  <div class="wrap">
+    <span class="eyebrow">Field Notes</span>
+    <h1>What we find, written down.</h1>
+    <p>Operator notes on how PT practices actually make and lose money. Nothing here is gated, and there's no list to join.</p>
+  </div>
+</header>
+
+<section class="library">
+  <div class="wrap">
+
+    <a class="piece" href="/field-notes/revenue-denominator">
+      <span class="kind">Article</span>
+      <h2>$288,000 per PT — and the two reasons your number is lower.</h2>
+      <p>The two branches every underperforming practice sits on, and the questions that tell you which one you're on.</p>
+      <span class="go">Read it →</span>
+    </a>
+
+    <a class="piece" href="/field-notes/revenue-self-audit">
+      <span class="kind">Worksheet</span>
+      <h2>The revenue self-audit.</h2>
+      <p>The same questions as a worksheet you can run on your own practice. Work out your denominator, then go down the list. No email, no download form.</p>
+      <span class="go">Run it →</span>
+    </a>
+
+    <div class="tail">
+      <p>Ran the audit and couldn't answer half of it? That's the finding. It usually means the data isn't where you'd need it to be.</p>
+      <a class="btn btn-teal" href="https://calendar.app.google/7gdkohRqV7wFtHuk8" target="_blank" rel="noopener">Book a 30-minute call</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><strong style="color:#fff">DSide Consulting, LLC</strong> — software for physical therapy practices</div>
+    <div>© 2026 · <a href="mailto:info@dsideconsulting.com">info@dsideconsulting.com</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

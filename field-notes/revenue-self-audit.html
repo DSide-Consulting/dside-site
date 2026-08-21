@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The revenue self-audit | DSide Consulting</title>
+<meta name="description" content="Work out your revenue per PT, then go down the list. A worksheet you can run on your own practice. Nothing gated, no email required.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1e293b; --ink-soft:#475569; --muted:#64748b;
+  --navy:#1a3a5c; --navy-deep:#0f2340;
+  --teal:#0d9488; --teal-dark:#0b7c72; --teal-bright:#5eead4; --teal-tint:#ccfbf1;
+  --line:#e2e8f0; --paper:#fff; --paper-alt:#f8fafc;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--paper);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+.col{max-width:780px;margin:0 auto;padding:0 28px}
+h1,h2,h3{line-height:1.18;letter-spacing:-.022em}
+p{color:var(--ink-soft)}
+a{color:inherit}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-bright);margin-bottom:18px;display:block}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:15px;padding:13px 24px;border-radius:10px;transition:transform .12s,background .15s;white-space:nowrap;border:none;cursor:pointer;font-family:inherit}
+.btn:hover{transform:translateY(-1px)}
+.btn-teal{background:var(--teal);color:#fff;box-shadow:0 2px 14px rgba(13,148,136,.28)}
+.btn-teal:hover{background:var(--teal-dark)}
+.btn-ghost{border:1px solid rgba(255,255,255,.3);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.btn-sm{padding:10px 18px;font-size:14px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:24px}
+.brand{font-weight:900;font-size:19px;letter-spacing:-.03em;text-decoration:none;white-space:nowrap}
+.brand span{color:var(--teal)}
+.back{font-size:14.5px;font-weight:500;color:var(--ink-soft);text-decoration:none}
+.back:hover{color:var(--teal)}
+
+.masthead{
+  background:radial-gradient(900px 500px at 80% 10%, rgba(13,148,136,.30), transparent 62%),
+             linear-gradient(160deg,var(--navy-deep),var(--navy));
+  color:#fff;padding:150px 0 76px;
+}
+.masthead h1{font-size:clamp(32px,4.8vw,50px);font-weight:900;letter-spacing:-.035em;max-width:18ch;margin-bottom:20px}
+.masthead p{color:rgba(255,255,255,.76);font-size:18px;max-width:60ch}
+
+main{padding:64px 0 30px}
+
+.calc{border:1px solid var(--line);border-radius:var(--radius);padding:32px 34px;background:var(--paper-alt)}
+.calc h2{font-size:23px;font-weight:800;margin-bottom:8px}
+.calc>p{font-size:16px;margin-bottom:24px}
+.fields{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.field label{display:block;font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:7px}
+.field input{
+  width:100%;font-family:inherit;font-size:19px;font-weight:700;color:var(--ink);
+  padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;
+}
+.field input:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(13,148,136,.14)}
+.readout{
+  margin-top:26px;padding-top:24px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;
+}
+.readout .lbl{font-size:15px;font-weight:600;color:var(--ink)}
+.readout .val{font-size:40px;font-weight:800;letter-spacing:-.03em;color:var(--teal)}
+.gap{margin-top:14px;font-size:15.5px;color:var(--muted);width:100%}
+.gap b{color:var(--ink)}
+
+.branch{margin-top:66px}
+.branch-head{padding-bottom:20px;border-bottom:2px solid var(--ink)}
+.branch-head h2{font-size:27px;font-weight:800}
+.branch-head h2 .n{color:var(--teal);margin-right:10px}
+.branch-head p{font-size:16px;margin-top:8px}
+
+.item{padding:26px 0;border-bottom:1px solid var(--line)}
+.item-top{display:flex;gap:14px;align-items:flex-start}
+.item input[type=checkbox]{
+  appearance:none;-webkit-appearance:none;flex:0 0 22px;width:22px;height:22px;margin-top:3px;
+  border:2px solid var(--line);border-radius:6px;background:#fff;cursor:pointer;transition:.15s;
+}
+.item input[type=checkbox]:hover{border-color:var(--teal)}
+.item input[type=checkbox]:checked{background:var(--teal);border-color:var(--teal)}
+.item input[type=checkbox]:checked::after{content:"✓";display:block;color:#fff;font-size:15px;font-weight:800;text-align:center;line-height:18px}
+.item h3{font-size:19px;font-weight:700;margin-bottom:6px}
+.item .q{font-size:16px;color:var(--ink-soft);margin-bottom:14px}
+.note{
+  display:block;width:100%;font-family:inherit;font-size:15.5px;color:var(--ink);
+  padding:11px 14px;border:1px dashed var(--line);border-radius:10px;background:var(--paper-alt);
+  resize:vertical;min-height:52px;
+}
+.note:focus{outline:none;border-color:var(--teal);border-style:solid;background:#fff}
+.note::placeholder{color:#94a3b8}
+.item-body{flex:1;min-width:0}
+
+.honest{
+  margin-top:60px;padding:30px 34px;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper-alt);
+}
+.honest b{display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
+.honest p{font-size:15.5px;color:var(--muted);margin:0}
+
+.next{margin:44px 0 0;padding:34px;border-radius:var(--radius);background:var(--navy-deep);color:#fff}
+.next h3{font-size:23px;font-weight:800;color:#fff;margin-bottom:10px}
+.next p{color:rgba(255,255,255,.72);font-size:16.5px;margin-bottom:22px;max-width:60ch}
+.next .btn+.btn{margin-left:10px}
+
+footer{background:#0b1c33;color:rgba(255,255,255,.55);padding:36px 0;font-size:14px;margin-top:90px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer a{color:rgba(255,255,255,.75);text-decoration:none}
+footer a:hover{color:var(--teal-bright)}
+
+@media(max-width:640px){
+  .masthead{padding:120px 0 56px}
+  main{padding:44px 0 20px}
+  .col,.wrap{padding:0 20px}
+  .calc{padding:24px 22px}
+  .fields{grid-template-columns:1fr}
+  .readout .val{font-size:32px}
+  .next .btn+.btn{margin-left:0;margin-top:10px}
+}
+@media print{
+  nav,.next,footer,.masthead{display:none}
+  body{font-size:12pt}
+  .item{break-inside:avoid}
+  .note{min-height:44px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="/" class="brand">D<span>Side</span> Consulting</a>
+    <a class="back" href="/field-notes/">← Field Notes</a>
+    <a class="btn btn-teal btn-sm" href="https://calendar.app.google/7gdkohRqV7wFtHuk8" target="_blank" rel="noopener">Book a call</a>
+  </div>
+</nav>
+
+<header class="masthead">
+  <div class="col">
+    <span class="eyebrow">Worksheet</span>
+    <h1>The revenue self-audit.</h1>
+    <p>Work out your denominator, then go down the list. Answer honestly — nothing here is sent anywhere, and there's nothing to submit.</p>
+  </div>
+</header>
+
+<main>
+  <div class="col">
+
+    <div class="calc">
+      <h2>Start with your denominator.</h2>
+      <p>Put in your own numbers. If you don't know one of them, that's already worth writing down.</p>
+      <div class="fields">
+        <div class="field">
+          <label for="visits">Visits per PT per day</label>
+          <input id="visits" type="number" min="0" max="40" step="0.5" value="12">
+        </div>
+        <div class="field">
+          <label for="rate">Collections per visit ($)</label>
+          <input id="rate" type="number" min="0" max="500" step="1" value="100">
+        </div>
+        <div class="field">
+          <label for="weeks">Working weeks per year</label>
+          <input id="weeks" type="number" min="0" max="52" step="1" value="48">
+        </div>
+      </div>
+      <div class="readout">
+        <span class="lbl">Annual revenue per PT</span>
+        <span class="val" id="out">$288,000</span>
+        <span class="gap" id="gap">This is the base case: <b>$288,000</b>.</span>
+      </div>
+    </div>
+
+    <section class="branch">
+      <div class="branch-head">
+        <h2><span class="n">1.</span>Are you collecting $100+ a visit?</h2>
+        <p>Check the ones you can answer with confidence. Leave the rest blank — the blanks are the point.</p>
+      </div>
+
+      <div class="item"><div class="item-top">
+        <input type="checkbox" id="a1" aria-labelledby="a1h">
+        <div class="item-body">
+          <h3 id="a1h">PTs underbilling</h3>
+          <p class="q">Are all your clinicians trained on the nuances of coding for their work? Are you losing $5–20 a visit on sloppy billing? If a QA team reviews your bills, what is that salary costing you?</p>
+          <textarea class="note" placeholder="Your answer / your number"></textarea>
+        </div>
+      </div></div>
+
+      <div class="item"><div class="item-top">
+        <input type="checkbox" id="a2" aria-labelledby="a2h">
+        <div class="item-body">
+          <h3 id="a2h">Poor contracts</h3>
+          <p class="q">What's your average per-visit rate by payer? Which contracts are dragging it down? Have you priced the admin burden — an easy $85 contract can beat a $95 one that costs an hour of follow-up per patient every other week.</p>
+          <textarea class="note" placeholder="Your answer / your number"></textarea>
+        </div>
+      </div></div>
+
+      <div class="item"><div class="item-top">
+        <input type="checkbox" id="a3" aria-labelledby="a3h">
+        <div class="item-body">
+          <h3 id="a3h">Benefits and authorization system</h3>
+          <p class="q">Is your staff collecting accurate information from patients and payers? Is it documented effectively in your EMR? Are your PTs on top of auth requests with defensible documentation?</p>
+          <textarea class="note" placeholder="Your answer / your number"></textarea>
+        </div>
+      </div></div>
+
+      <div class="item"><div class="item-top">
+        <input type="checkbox" id="a4" aria-labelledby="a4h">
+        <div class="item-body">
+          <h3 id="a4h">Copays and coinsurance</h3>
+          <p class="q">What does that system look like? Do you keep a card on file and charge automatically? Is coinsurance payment tied directly to EOB/ERA entry? What percentage goes uncollected?</p>
+          <textarea class="note" placeholder="Your answer / your number"></textarea>
+        </div>
+      </div></div>
+
+      <div class="item"><div class="item-top">
+        <input type="checkbox" id="a5" aria-labelledby="a5h">
+        <div class="item-body">
+          <h3 id="a5h">Collections ownership</h3>
+          <p class="q">In-house or outsourced? If in-house, what happens when a key person leaves? If outsourced, what are you paying — including on automatic payers like Medicare? Does your RCM team pursue everything, or is there a write-off threshold? Do you know which payers, patients and referral sources tend not to pay?</p>
+          <textarea class="note" placeholder="Your answer / your number"></textarea>
+        </div>
+      </div></div>
+    </section>
+
+    <section class="branch">
+      <div class="branch-head">
+        <h2><span class="n">2.</span>Are your PTs seeing 12 a day?</h2>
+        <p>Same rule. Confidence, not guesses.</p>
+      </div>
+
+      <div class="item"><div class="item-top">
+        <input type="checkbox" id="b1" aria-labelledby="b1h">
+        <div class="item-body">
+          <h3 id="b1h">Expectations</h3>
+          <p class="q">What's your target number? Are you communicating it regularly? Do your PTs know it? Does your front desk know it? Is it attainable, and are the people who hit it rewarded?</p>
+          <textarea class="note" placeholder="Your answer / your number"></textarea>
+        </div>
+      </div></div>
+
+      <div class="item"><div class="item-top">
+        <input type="checkbox" id="b2" aria-labelledby="b2h">
+        <div class="item-body">
+          <h3 id="b2h">Schedule imbalance</h3>
+          <p class="q">Are some PTs seeing 15–16 a day and others 9–10? What's the actual spread across your roster? Why do you think that is? Could that imbalance be made to work for you instead of against you?</p>
+          <textarea class="note" placeholder="Your answer / your number"></textarea>
+        </div>
+      </div></div>
+    </section>
+
+    <div class="honest">
+      <b>What the blanks mean</b>
+      <p>Most owners can answer three or four of these cold. The rest usually aren't unknown because nobody cares — they're unknown because the data lives in four systems that don't talk, and pulling it takes a week nobody has. That's a systems problem, and it's the one worth fixing first.</p>
+    </div>
+
+    <div class="next">
+      <h3>Couldn't answer half of it?</h3>
+      <p>That's the finding. Bring the worksheet to a call and we'll go through what it would take to make those questions answerable on a Tuesday morning instead of a two-week project.</p>
+      <a class="btn btn-teal" href="https://calendar.app.google/7gdkohRqV7wFtHuk8" target="_blank" rel="noopener">Book a 30-minute call</a>
+      <a class="btn btn-ghost" href="/field-notes/revenue-denominator">Read the article</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><strong style="color:#fff">DSide Consulting, LLC</strong> — software for physical therapy practices</div>
+    <div>© 2026 · <a href="mailto:info@dsideconsulting.com">info@dsideconsulting.com</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var v=document.getElementById('visits'),r=document.getElementById('rate'),
+      w=document.getElementById('weeks'),out=document.getElementById('out'),gap=document.getElementById('gap');
+  var fmt=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
+  var BASE=288000;
+  function calc(){
+    var a=parseFloat(v.value)||0, b=parseFloat(r.value)||0, c=parseFloat(w.value)||0;
+    var total=Math.round(a*b*5*c);
+    out.textContent=fmt.format(total);
+    var d=total-BASE;
+    if(Math.abs(d)<1000){
+      gap.innerHTML='That lands on the base case of <b>'+fmt.format(BASE)+'</b>.';
+    }else if(d<0){
+      gap.innerHTML='That is <b>'+fmt.format(Math.abs(d))+'</b> per PT below the '+fmt.format(BASE)+' base case. Across 8 PTs, <b>'+fmt.format(Math.abs(d)*8)+'</b> a year.';
+    }else{
+      gap.innerHTML='That is <b>'+fmt.format(d)+'</b> per PT above the '+fmt.format(BASE)+' base case.';
+    }
+  }
+  [v,r,w].forEach(function(el){el.addEventListener('input',calc)});
+  calc();
+})();
+</script>
+
+</body>
+</html>
