@@ -178,17 +178,17 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
   font-size:15.5px;font-weight:600;color:var(--ink);
 }
 
-/* ---------- exit math ---------- */
-.exit{
+/* ---------- what it's worth ---------- */
+.worth{
   background:
     radial-gradient(760px 440px at 85% 12%, rgba(13,148,136,.30), transparent 62%),
     linear-gradient(150deg,var(--navy-deep),#12304f);
   color:#fff;
 }
-.exit h2{max-width:22ch;margin-bottom:20px}
-.exit .lede{color:rgba(255,255,255,.78);font-size:18.5px}
-.exit-body{color:rgba(255,255,255,.72);font-size:16.5px;max-width:66ch;margin-top:26px}
-.exit-body strong{color:#fff;font-weight:600}
+.worth h2{max-width:22ch;margin-bottom:20px}
+.worth .lede{color:rgba(255,255,255,.78);font-size:18.5px}
+.worth-body{color:rgba(255,255,255,.72);font-size:16.5px;max-width:66ch;margin-top:26px}
+.worth-body strong{color:#fff;font-weight:600}
 .math{
   display:flex;align-items:stretch;gap:14px;flex-wrap:wrap;
   margin:44px 0 8px;
@@ -208,18 +208,30 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
   display:flex;align-items:center;font-size:24px;font-weight:800;
   color:rgba(255,255,255,.35);
 }
-.exit-close{
+.worth-close{
   margin-top:40px;padding:26px 30px;border:1px solid rgba(94,234,212,.28);
   border-radius:var(--radius);background:rgba(94,234,212,.05);
   display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap;
 }
-.exit-close p{
+.worth-close p{
   font-size:17px;font-weight:600;color:rgba(255,255,255,.86);max-width:52ch;margin:0;
 }
 .fineprint{
   margin-top:26px;font-size:13.5px;line-height:1.6;
   color:rgba(255,255,255,.45);max-width:74ch;
 }
+.branch-blk{margin-top:60px;padding-top:48px;border-top:1px solid rgba(255,255,255,.15)}
+.branch-blk:first-of-type{margin-top:44px;padding-top:0;border-top:none}
+.branch-label{
+  display:block;font-size:13px;font-weight:800;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--teal-bright);margin-bottom:6px;
+}
+.worth-list{list-style:none;margin-top:28px;display:grid;gap:18px}
+.worth-list li{
+  padding-left:18px;border-left:2px solid rgba(94,234,212,.38);
+  color:rgba(255,255,255,.72);font-size:16px;line-height:1.6;max-width:72ch;
+}
+.worth-list li b{color:#fff;font-weight:600}
 @media(max-width:640px){
   .math{gap:10px}
   .math-op{display:none}
@@ -309,7 +321,7 @@ footer a:hover{color:var(--teal-bright)}
     <a href="#top" class="brand">D<span>Side</span> Consulting</a>
     <ul class="navlinks">
       <li><a href="#work">What We Build</a></li>
-      <li><a href="#exit">Exit Math</a></li>
+      <li><a href="#worth">What It's Worth</a></li>
       <li><a href="#process">How It Works</a></li>
       <li><a href="/field-notes/">Field Notes</a></li>
       <li><a href="#about">About</a></li>
@@ -419,29 +431,57 @@ footer a:hover{color:var(--teal-bright)}
   </div>
 </section>
 
-<!-- ================= EXIT MATH ================= -->
-<section id="exit" class="exit">
+<!-- ================= WHAT IT'S WORTH ================= -->
+<section id="worth" class="worth">
   <div class="wrap">
-    <span class="eyebrow on-dark">The Exit Math</span>
-    <h2>If a sale is anywhere in your next few years, this is the highest-return work available to you.</h2>
-    <p class="lede">Multi-site PT groups have been transacting in the range of 5–10x EBITDA. So the operating margin you recover before a sale doesn't just show up in this year's distribution. It gets multiplied at close.</p>
+    <span class="eyebrow on-dark">What It's Worth</span>
+    <h2>The same $200K means two different things.</h2>
+    <p class="lede">Recovered margin is recovered margin. What it's worth to you depends on whether you're building this to keep or building it to hand off.</p>
 
-    <div class="math">
-      <div class="math-cell"><b>$200K</b><span>recovered annual EBITDA</span></div>
-      <div class="math-op">×</div>
-      <div class="math-cell"><b>6x</b><span>typical multi-site multiple</span></div>
-      <div class="math-op">=</div>
-      <div class="math-cell result"><b>$1.2M</b><span>added enterprise value at close</span></div>
+    <div class="branch-blk">
+      <span class="branch-label">If you're holding</span>
+
+      <div class="math">
+        <div class="math-cell"><b>$200K</b><span>recovered annually</span></div>
+        <div class="math-op">&times;</div>
+        <div class="math-cell"><b>5 years</b><span>the recovery holding</span></div>
+        <div class="math-op">=</div>
+        <div class="math-cell result"><b>$1M</b><span>you actually spend</span></div>
+      </div>
+
+      <p class="worth-body">Most owners aren't selling. For them the number doesn't multiply &mdash; it repeats. Every year the auth queue holds and the cancellations get called back, that money shows up again.</p>
+
+      <p class="worth-body">And not all of the return is money:</p>
+
+      <ul class="worth-list">
+        <li><b>Visits recovered against rent and payroll you're already paying.</b> Close to pure margin, without hiring into a 13% vacancy rate.</li>
+        <li><b>Your week back.</b> When the schedule and the auth queue stop routing to you, that's either clinical hours or it's time off. Your call.</li>
+        <li><b>Front desk turnover that stops resetting the operation</b>, because the process lives in the software instead of in someone's head.</li>
+      </ul>
     </div>
 
-    <p class="exit-body">The auth queue, the undercoded visits, the cancellations nobody called back — all of that is EBITDA, and all of it is fixable before a diligence team starts asking. Most owners start about a year too late.</p>
+    <div class="branch-blk">
+      <span class="branch-label">If a sale is in the next few years</span>
 
-    <div class="exit-close">
+      <div class="math">
+        <div class="math-cell"><b>$200K</b><span>recovered EBITDA</span></div>
+        <div class="math-op">&times;</div>
+        <div class="math-cell"><b>6x</b><span>typical multi-site multiple</span></div>
+        <div class="math-op">=</div>
+        <div class="math-cell result"><b>$1.2M</b><span>added at close</span></div>
+      </div>
+
+      <p class="worth-body">Multi-site PT groups have been transacting in the range of 5&ndash;10x EBITDA. So the operating margin you recover before a sale doesn't just show up in this year's distribution. It gets multiplied at close.</p>
+
+      <p class="worth-body">The auth queue, the undercoded visits, the cancellations nobody called back &mdash; all of that is EBITDA, and all of it is fixable before a diligence team starts asking. Most owners start about a year too late.</p>
+    </div>
+
+    <div class="worth-close">
       <p>We're not brokers and we don't get paid by whoever buys you. We find the margin before someone else's diligence team does.</p>
       <a class="btn btn-teal" href="https://calendar.app.google/7gdkohRqV7wFtHuk8" target="_blank" rel="noopener">Run the numbers with me</a>
     </div>
 
-    <p class="fineprint">Multiples vary by practice size, payer mix, and specialty concentration. We'll tell you what your operation looks like, not what your practice is worth. That's a valuation, and it's a different job.</p>
+    <p class="fineprint">Multiples vary by practice size, payer mix, and specialty concentration. The five-year figure assumes the recovery holds; it's arithmetic, not a projection. We'll tell you what your operation looks like, not what your practice is worth. That's a valuation, and it's a different job.</p>
   </div>
 </section>
 
