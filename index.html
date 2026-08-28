@@ -268,6 +268,18 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 /* ---------- about ---------- */
 .about-split{display:grid;grid-template-columns:1.35fr 1fr;gap:64px;align-items:start}
 .about-split p+p{margin-top:18px}
+.about-side{position:sticky;top:96px}
+.headshot{margin:0 0 24px}
+.headshot img{
+  display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;
+  border-radius:var(--radius);background:var(--paper-alt);
+}
+.headshot figcaption{
+  margin-top:14px;font-size:15px;font-weight:700;color:var(--ink);line-height:1.4;
+}
+.headshot figcaption span{
+  display:block;font-size:14px;font-weight:500;color:var(--muted);margin-top:2px;
+}
 .creds{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
 .cred{background:#fff;padding:24px 26px}
 .cred b{display:block;font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-.03em}
@@ -296,6 +308,8 @@ footer a:hover{color:var(--teal-bright)}
   .g3{grid-template-columns:repeat(2,1fr)}
   .stats .wrap{grid-template-columns:repeat(2,1fr)}
   .stan-split,.about-split{grid-template-columns:1fr;gap:40px}
+  .about-side{position:static;display:grid;grid-template-columns:200px 1fr;gap:26px;align-items:start}
+  .headshot{margin:0}
   .navlinks{display:none}
 }
 @media(max-width:640px){
@@ -303,6 +317,8 @@ footer a:hover{color:var(--teal-bright)}
   .hero{padding:130px 0 80px}
   .g2,.g3,.g4{grid-template-columns:1fr}
   .stats .wrap{grid-template-columns:1fr}
+  .about-side{grid-template-columns:1fr;gap:24px}
+  .headshot img{max-width:240px}
   .quote{padding:28px 26px;font-size:20px}
   .step{grid-template-columns:1fr;gap:10px}
   .step::before{padding-top:0}
@@ -544,11 +560,21 @@ footer a:hover{color:var(--teal-bright)}
           <span class="pill">Workflow Design</span>
         </div>
       </div>
+      <div class="about-side">
+      <figure class="headshot">
+        <img src="/assets/daniel-seidler.jpg"
+             srcset="/assets/daniel-seidler@1x.jpg 440w, /assets/daniel-seidler.jpg 880w"
+             sizes="(max-width:980px) 200px, 400px"
+             width="880" height="880" loading="lazy" decoding="async"
+             alt="Daniel Seidler, PT — founder of DSide Consulting">
+        <figcaption>Daniel Seidler, PT<span>Founder, DSide Consulting, LLC</span></figcaption>
+      </figure>
       <div class="creds">
         <div class="cred"><b>16 yrs</b><span>Owning and operating a high-volume NYC PT practice</span></div>
         <div class="cred"><b>10 yrs</b><span>Enterprise PT and health technology experience</span></div>
         <div class="cred"><b>Since 1996</b><span>Licensed NYS Physical Therapist</span></div>
         <div class="cred"><b>$0</b><span>Vendor referral fees or hidden partnerships</span></div>
+      </div>
       </div>
     </div>
   </div>
