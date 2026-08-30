@@ -181,9 +181,8 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 
 /* ---------- practice operations audit ---------- */
 .audit{background:var(--paper-blue)}
-.audit-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:start}
 .audit h3{font-size:20px;font-weight:800;color:var(--ink);margin-bottom:18px}
-.audit-list{list-style:none;display:grid;gap:15px}
+.audit-list{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px 40px}
 .audit-list li{
   padding-left:18px;border-left:3px solid #b9d4ea;
   font-size:16px;line-height:1.6;color:var(--ink-soft);
@@ -195,14 +194,11 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
   color:var(--muted);max-width:62ch;
 }
 .audit-note sup{font-style:normal;color:var(--teal);font-weight:800;margin-right:2px}
-.audit-side{display:grid;gap:26px;position:sticky;top:96px}
-.audit-block p{font-size:16px;line-height:1.65}
-.audit-block p+p{margin-top:14px}
-.price-card{
-  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 30px;
+.audit-out{
+  margin-top:52px;padding-top:40px;border-top:1px solid #cddff0;
+  display:flex;justify-content:space-between;align-items:center;gap:36px;flex-wrap:wrap;
 }
-.price-card b{color:var(--ink);font-weight:800}
-.audit .btn{justify-self:start}
+.audit-out p{font-size:16.5px;line-height:1.65;max-width:62ch}
 
 /* ---------- what it's worth ---------- */
 .worth{
@@ -308,8 +304,7 @@ footer a:hover{color:var(--teal-bright)}
   .g3{grid-template-columns:repeat(2,1fr)}
   .stats .wrap{grid-template-columns:repeat(2,1fr)}
   .stan-split,.about-split{grid-template-columns:1fr;gap:40px}
-  .audit-grid{grid-template-columns:1fr;gap:44px}
-  .audit-side{position:static}
+  .audit-list{grid-template-columns:1fr}
   .about-side{position:static;display:grid;grid-template-columns:200px 1fr;gap:26px;align-items:start}
   .headshot{margin:0}
   .navlinks{display:none}
@@ -459,37 +454,27 @@ footer a:hover{color:var(--teal-bright)}
       <p class="lede">Four or five days inside your operation. I look at what you're running, what you're paying for, and what's actually getting used. Then you get it in writing, with a number attached to every recommendation.</p>
     </div>
 
-    <div class="audit-grid">
+    <h3>What I look at</h3>
+    <ul class="audit-list">
+      <li><b>Workflow</b>&mdash;how work actually moves through the practice, not how the org chart says it does</li>
+      <li><b>Technology in use</b>&mdash;every software and hardware line item against what your staff genuinely uses. Not IT infrastructure.</li>
+      <li><b>Patient experience</b>&mdash;from first contact through discharge</li>
+      <li><b>Staff experience</b>&mdash;where people burn time, and why the front desk keeps turning over</li>
+      <li><b>Authorizations</b>&mdash;the queue, who owns it, what it costs you</li>
+      <li><b>Billing and collections</b>&mdash;what gets billed, what gets collected, and the gap</li>
+      <li><b>Purchasing</b>&mdash;PT equipment and materials</li>
+      <li><b>Other lines of business<sup>*</sup></b>&mdash;the gym membership, personal training, massage, retail. Whatever else is running under your roof.</li>
+    </ul>
+    <p class="audit-note"><sup>*</sup>May require additional time and cost depending on scope.</p>
+
+    <div class="audit-out">
       <div>
-        <h3>What I look at</h3>
-        <ul class="audit-list">
-          <li><b>Workflow</b>&mdash;how work actually moves through the practice, not how the org chart says it does</li>
-          <li><b>Technology in use</b>&mdash;every software and hardware line item against what your staff genuinely uses. Not IT infrastructure.</li>
-          <li><b>Patient experience</b>&mdash;from first contact through discharge</li>
-          <li><b>Staff experience</b>&mdash;where people burn time, and why the front desk keeps turning over</li>
-          <li><b>Authorizations</b>&mdash;the queue, who owns it, what it costs you</li>
-          <li><b>Billing and collections</b>&mdash;what gets billed, what gets collected, and the gap</li>
-          <li><b>Purchasing</b>&mdash;PT equipment and materials</li>
-          <li><b>Other lines of business<sup>*</sup></b>&mdash;the gym membership, personal training, massage, retail. Whatever else is running under your roof.</li>
-        </ul>
-        <p class="audit-note"><sup>*</sup>May require additional time and cost depending on scope.</p>
+        <h3>What you get</h3>
+        <p>A written findings document covering all of it, plus a prioritized recommendations list with costs attached. Not a strategy deck. A list of things to fix, what each one costs, and what it's worth.</p>
       </div>
-
-      <div class="audit-side">
-        <div class="audit-block">
-          <h3>What you get</h3>
-          <p>A written findings document covering all of it, plus a prioritized recommendations list with costs attached. Not a strategy deck. A list of things to fix, what each one costs, and what it's worth.</p>
-        </div>
-
-        <div class="price-card audit-block">
-          <h3>What it costs</h3>
-          <p><b>$6,500</b> for practices up to six locations. <b>$12,500</b> for larger groups. Credited in full against any build work that follows.</p>
-          <p>I'm running the first two at <b>$2,500</b> as founding engagements. In exchange, I need a named case study with real numbers. I'd rather earn the reference than argue about the fee.</p>
-        </div>
-
-        <a class="btn btn-teal" href="https://calendar.app.google/7gdkohRqV7wFtHuk8" target="_blank" rel="noopener">Talk to me about an audit</a>
-      </div>
+      <a class="btn btn-teal" href="https://calendar.app.google/7gdkohRqV7wFtHuk8" target="_blank" rel="noopener">Talk to me about an audit</a>
     </div>
+
   </div>
 </section>
 
@@ -549,7 +534,7 @@ footer a:hover{color:var(--teal-bright)}
       <div class="step">
         <div>
           <h3>Diagnostic</h3>
-          <p>Four or five days. We sit inside the operation — your schedule, your reports, your front desk, your last three hires. You get a written read on where the leakage is and what's worth fixing first, whether or not you work with us after. <a class="inline" href="#audit">Full scope and pricing.</a></p>
+          <p>Four or five days. We sit inside the operation — your schedule, your reports, your front desk, your last three hires. You get a written read on where the leakage is and what's worth fixing first, whether or not you work with us after. <a class="inline" href="#audit">See what the audit covers.</a></p>
         </div>
       </div>
       <div class="step">
