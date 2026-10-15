@@ -14,3 +14,9 @@
   for = "/index.html"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+
+# STAN tester page lives at /stan; catch the capitalized link too.
+[[redirects]]
+  from = "/STAN"
+  to = "/stan/"
+  status = 301
